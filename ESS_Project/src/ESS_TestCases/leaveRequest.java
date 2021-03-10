@@ -44,7 +44,7 @@ WebDriver driver;
 		}
 	}
     
-    @Test(priority = 1, enabled = true)
+    @Test(priority = 1, enabled = false)
     public void add_request()  {
     	
     	try {
@@ -83,12 +83,20 @@ WebDriver driver;
     }
     
     @Test(priority = 2, enabled = true)
-    public void view_request() {
+    public void view_request() throws Exception {
     	
+    	try {
     	ESS_Pages.leaveRequest leave = PageFactory.initElements(driver, ESS_Pages.leaveRequest.class);
     	
-    	leave.click_action(1);
+    	leave.click_action(0);
+    	Thread.sleep(1000);
     	leave.select_view();
+    	
+    	} catch(Exception e) {
+    		
+    		System.out.println("The issue in view is "+e);
+    		
+    	}
     	
     }
 	

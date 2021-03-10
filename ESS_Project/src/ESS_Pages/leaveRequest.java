@@ -29,7 +29,7 @@ public class leaveRequest {
 	@FindBy(id="btnLeaveSave")
 	WebElement save;
 	
-	@FindBy(xpath = "//div[@class='btn-group tbl-btn-grp']/button[@class='btn btn-default dropdown-toggle table-drop action-btn']/span")
+	@FindBy(xpath = "//div[@class='btn-group tbl-btn-grp']/button[@class='btn btn-default dropdown-toggle table-drop action-btn']")
 	List<WebElement> action;
 	
 	@FindBy(xpath = "//ul[@class='dropdown-menu action-drop-list']/li/a[@class='action-link']")
@@ -79,7 +79,7 @@ public class leaveRequest {
 		
 		int count = action.size();
 		
-		for(int i=0; i<=count; i++) {
+		for(int i=0; i<count; i++) {
 			
 			WebElement ele = action.get(index);
 			{
@@ -103,6 +103,7 @@ public class leaveRequest {
 			if(DS.contentEquals("View")) {
 				
 				ele.click();
+				break;
 			}
 		}
 	}
