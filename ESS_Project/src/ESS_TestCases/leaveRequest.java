@@ -82,7 +82,7 @@ WebDriver driver;
     	}
     }
     
-    @Test(priority = 2, enabled = false)
+    @Test(priority = 2, enabled = true)
     public void view_request() throws Exception {
     	
     	try {
