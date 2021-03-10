@@ -25,6 +25,7 @@ public class DashBoard {
 	public void request() {
 		
 		request.click();
+		System.out.println("success");
 	}
 	
 	public void document() {
