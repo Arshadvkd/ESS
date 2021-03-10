@@ -85,7 +85,7 @@ WebDriver driver;
     @Test(priority = 2, enabled = true)
     public void view_request() throws Exception {
     	
-    	try {
+    	try { 
     	ESS_Pages.leaveRequest leave = PageFactory.initElements(driver, ESS_Pages.leaveRequest.class);
     	
     	leave.click_action(0); 
