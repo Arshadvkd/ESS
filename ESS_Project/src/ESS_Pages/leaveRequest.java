@@ -110,6 +110,42 @@ public class leaveRequest {
 		}
 	}
 	
+	public void select_edit() {
+		
+		int count = list_actions.size();
+		
+		for(int i=0;i<=count;i++) {
+			
+			WebElement ele = list_actions.get(i);
+			
+			String ds = ele.getAttribute("innerHTML");
+			
+			if(ds.contentEquals("Edit")) {
+				
+				ele.click();
+				break;
+			}
+		}
+	}
+	
+	public void select_cancel() {
+		
+		int count = list_actions.size();
+		
+		for(int i=0; i<=count; i++) {
+			
+			WebElement ele = list_actions.get(i);
+			
+			String ds = ele.getAttribute("innerHTML");
+			
+			if(ds.contentEquals("Cancel")) {
+				
+				ele.click();
+				break;
+			}
+		}
+	}
+	
 	public void clickFdate() {
 		
 		from_date.click();
