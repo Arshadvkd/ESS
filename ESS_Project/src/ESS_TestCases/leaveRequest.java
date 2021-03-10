@@ -20,7 +20,7 @@ WebDriver driver;
 	public void request() {
 		
 		try { 
-		
+		   
 		driver = BrowserFactory.startBrowser("FirefoxDriver", "http://111.92.110.196:8099/");
 		loginPage login = PageFactory.initElements(driver, loginPage.class);
 		Menu menu = PageFactory.initElements(driver, Menu.class);
