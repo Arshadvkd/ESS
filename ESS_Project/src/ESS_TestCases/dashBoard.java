@@ -29,7 +29,7 @@ public class dashBoard {
 			// Login credentials
 			login.Login("esstest@mail.com", "123456789");
 			
-			// Menu selecting 
+			// Menu selectings
 			  
 			
 			
