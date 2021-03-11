@@ -35,6 +35,8 @@ public class leaveRequest {
 	@FindBy(xpath = "//ul[@class='dropdown-menu action-drop-list']/li/a[@class='action-link']")
 	List<WebElement> list_actions;
 	
+	@FindBy(xpath = "//figcaption[@class='figure-caption']//following::button[1]")
+	WebElement close;
 	
 	
 	
@@ -146,6 +148,11 @@ public class leaveRequest {
 		save.click();
 	}
 	
+	
+	public void close_window() {
+		
+		close.click();
+	}
 	
 	
 	

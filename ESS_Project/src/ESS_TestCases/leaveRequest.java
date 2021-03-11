@@ -91,6 +91,8 @@ WebDriver driver;
     	leave.click_action(0);
     	Thread.sleep(1000);
     	leave.select_view();
+    	Thread.sleep(1000);
+    	leave.close_window();
     	
     	} catch(Exception e) {
     		
