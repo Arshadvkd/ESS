@@ -24,6 +24,8 @@ public class dashBoard {
 			driver = BrowserFactory.startBrowser("FirefoxDriver", "http://111.92.110.196:8099/");
 			loginPage login = PageFactory.initElements(driver, loginPage.class);
 			
+			System.out.println("new");
+			
 			// Login credentials
 			login.Login("esstest@mail.com", "123456789");
 			
