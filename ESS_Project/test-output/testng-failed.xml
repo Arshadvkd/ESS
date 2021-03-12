@@ -5,7 +5,7 @@
     <classes>
       <class name="ESS_TestCases.leaveRequest">
         <methods>
-          <include name="view_request"/>
+          <include name="advance_search"/>
           <include name="request"/>
         </methods>
       </class> <!-- ESS_TestCases.leaveRequest -->

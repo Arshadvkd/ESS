@@ -6,6 +6,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import ESS_Pages.Menu;
+import ESS_Pages.advancesearch_Leave;
 import ESS_Pages.loginPage;
 import ESS_Pages.request_pages;
 import Helper.BrowserFactory;
@@ -81,8 +82,8 @@ WebDriver driver;
     		System.out.println("The issue is = "+e);
     	}
     }
-    
-    @Test(priority = 2, enabled = true)
+      
+    @Test(priority = 2, enabled = false)
     public void view_request() throws Exception {
     	 
     	try { 
@@ -95,8 +96,14 @@ WebDriver driver;
     	leave.close_window();
     	Thread.sleep(1000);
     	leave.click_action(0);
+    	//Thread.sleep(1000);
+    	//Clicking the edit
+    	//leave.select_edit();
     	Thread.sleep(1000);
-    	leave.select_edit();
+    	// Clicking the history    	
+    	//leave.select_history();
+    	
+    	
     	
     	} catch(Exception e) {
     		
@@ -104,6 +111,64 @@ WebDriver driver;
     		
     	}
     	
+    }
+    
+    @Test(priority = 3, enabled = false)
+    public void cancel_leave() {
+    	
+    	try {
+    		ESS_Pages.leaveRequest leave = PageFactory.initElements(driver, ESS_Pages.leaveRequest.class);
+    		//Clicking the cancel
+        	leave.click_cancel();
+    		
+        	leave.reason("This is the automation test in cancel popup");
+        	leave.save_submit();
+    		
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("The issue in cancel is "+e);
+		}
+    }
+    
+    
+    @Test(priority = 4, enabled = false)
+    public void advance_search_leavetype() {
+    	
+    	try {
+    	
+    		advancesearch_Leave search = PageFactory.initElements(driver, advancesearch_Leave.class);
+    		
+    		search.Click_advance();
+    		Thread.sleep(1000);
+    		search.click_leaveType(0);
+    		Thread.sleep(1000);
+    		search.leaveType_select();
+    		Thread.sleep(1000);
+    		search.show_result();
+    	
+    	
+    	} catch(Exception e) {
+    		
+    		System.out.println("The issue will be " +e);
+    	}
+    }
+    
+    @Test(priority = 5, enabled = true)
+    public void advance_search_dates() {
+    	
+    	try {
+    	
+    	advancesearch_Leave search = PageFactory.initElements(driver, advancesearch_Leave.class);
+    	  
+    	search.Click_advance();
+    	Thread.sleep(1000);
+    	search.fDate_click();
+    	
+    	} catch (Exception e) {
+			// TODO: handle exception
+    		
+    		System.out.println("The issue is "+e);
+		}
     }
 	
 

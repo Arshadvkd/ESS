@@ -36,7 +36,19 @@ public class leaveRequest {
 	List<WebElement> list_actions;
 	
 	@FindBy(xpath = "//figcaption[@class='figure-caption']//following::button[1]")
-	WebElement close;
+	WebElement close; 
+	
+	// Cancel & Reason functions
+	
+	@FindBy(id = "txtreason")
+	WebElement cancel_reason;
+	
+	@FindBy(xpath = "//div[@class='buttons']/button[@class='btn btn-success']")
+	WebElement submit;
+	
+	@FindBy(xpath = "//div[@class='buttons']/button[@class='btn btn-default']")
+	WebElement cancel;
+	
 	
 	
 	
@@ -110,6 +122,24 @@ public class leaveRequest {
 		}
 	}
 	
+public void click_cancel() {
+		
+		int count = list_actions.size();
+		
+		for(int i=0; i<=count; i++) {
+			
+			WebElement ele = list_actions.get(i);
+			
+			String DS = ele.getAttribute("innerHTML");
+			
+			if(DS.contentEquals("Cancel")) {
+				
+				ele.click();
+				break;
+			}
+		}
+	}
+	
 	public void select_edit() {
 		
 		int count = list_actions.size();
@@ -121,6 +151,24 @@ public class leaveRequest {
 			String ds = ele.getAttribute("innerHTML");
 			
 			if(ds.contentEquals("Edit")) {
+				
+				ele.click();
+				break;
+			}
+		}
+	}
+	
+public void select_history() {
+		
+		int count = list_actions.size();
+		
+		for(int i=0;i<=count;i++) {
+			
+			WebElement ele = list_actions.get(i);
+			
+			String ds = ele.getAttribute("innerHTML");
+			
+			if(ds.contentEquals("History")) {
 				
 				ele.click();
 				break;
@@ -145,6 +193,8 @@ public class leaveRequest {
 			}
 		}
 	}
+	
+	
 	
 	public void clickFdate() {
 		
@@ -191,5 +241,22 @@ public class leaveRequest {
 	}
 	
 	
+	public void reason(String reason) {
+		
+		cancel_reason.click();
+		cancel_reason.clear();
+		cancel_reason.sendKeys(reason);
+	}
+	
+	public void save_submit() {
+		
+		submit.click();
+		
+	}
+	
+	public void cancel() {
+		
+		cancel.click();
+	}
 	
 }
