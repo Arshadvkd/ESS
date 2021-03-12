@@ -38,6 +38,7 @@ public class leaveRequest {
 	@FindBy(xpath = "//figcaption[@class='figure-caption']//following::button[1]")
 	WebElement close; 
 	
+	// Cancel & Reason functions
 	
 	@FindBy(id = "txtreason")
 	WebElement cancel_reason;
@@ -47,6 +48,7 @@ public class leaveRequest {
 	
 	@FindBy(xpath = "//div[@class='buttons']/button[@class='btn btn-default']")
 	WebElement cancel;
+	
 	
 	
 	
@@ -191,6 +193,8 @@ public void select_history() {
 			}
 		}
 	}
+	
+	
 	
 	public void clickFdate() {
 		
