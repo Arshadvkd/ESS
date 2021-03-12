@@ -95,8 +95,14 @@ WebDriver driver;
     	leave.close_window();
     	Thread.sleep(1000);
     	leave.click_action(0);
+    	//Thread.sleep(1000);
+    	//Clicking the edit
+    	//leave.select_edit();
     	Thread.sleep(1000);
-    	leave.select_edit();
+    	// Clicking the history    	
+    	//leave.select_history();
+    	
+    	
     	
     	} catch(Exception e) {
     		
@@ -104,6 +110,23 @@ WebDriver driver;
     		
     	}
     	
+    }
+    
+    @Test(priority = 3, enabled = true)
+    public void cancel_leave() {
+    	
+    	try {
+    		ESS_Pages.leaveRequest leave = PageFactory.initElements(driver, ESS_Pages.leaveRequest.class);
+    		//Clicking the cancel
+        	leave.click_cancel();
+    		
+        	leave.reason("This is the automation test in cancel popup");
+        	leave.save_submit();
+    		
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("The issue in cancel is "+e);
+		}
     }
 	
 
